@@ -17,8 +17,23 @@ you can import the `.kwgt` files with the [Kustom KWGT App](https://play.google.
 
 ---
 
+## add coin price and update
+
+![sushi_price](res/Screenshot_4.jpg)
+
+create a global variable with a [coingecko API](https://www.coingecko.com/en/api/documentation) call as text
+
+current Sushi price (EUR) -> gv
+`https://api.coingecko.com/api/v3/simple/price?ids=sushi&vs_currencies=EUR`
+
+create a text Element with `wg()` and JSON parser
+
+`$wg(gv(YOUR_GLOBAL_VARIABLE_NAME), json, .sushi.eur)$€` 
+
+I use the sushi logo with a "Kustom Action" to force "RSS/TEXT/XML-Updates" on tap which refreshes the call/price.
+
 ### todo
 
 - [ ] fetch termux output from bash\.
-- [ ] add current $SUSHI price and SushiBar APY  <-- [Sushiswap subgraph?](https://github.com/sushiswap/sushiswap-subgraph)
+- [x] add current $SUSHI price\.
 - [ ] toggle light/dark mode\.
